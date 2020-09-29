@@ -37,7 +37,7 @@ async def async_setup(hass, config):
     -------------------------------------------------------------------
     Sengled Bulb Home Assistant Integration Created from Config
 
-    Version: v0.1-beta.17
+    Version: v0.1-beta.18
     This is a custom integration
     If you have any issues with this you need to open an issue here:
     https://github.com/jfarmer08/ha-sengledapi
@@ -91,7 +91,12 @@ async def async_setup_entry(hass, entry):
     country = entry.data[CONF_COUNTRY]
     bulbtype = entry.data[CONF_TYPE]
 
-    sengledapi_account = SengledApi(username, password, country, bulbtype,)
+    sengledapi_account = SengledApi(
+        username,
+        password,
+        country,
+        bulbtype,
+    )
 
     await sengledapi_account.async_init()
 
